@@ -1,0 +1,26 @@
+{
+  "id": "babylonjs-polygon-streaming",
+  "name": "babylonjs-polygon-streaming",
+  "version": "0.1.0",
+  "status": "active",
+  "description": "Integrating Viverse Polygon Streaming (.xrg) into a Babylon.js scene via the @polygon-streaming/web-player-babylonjs NPM package.",
+  "tags": [
+    "polygon-streaming",
+    "viverse",
+    "babylonjs",
+    "xrg",
+    "streaming",
+    "ammo"
+  ],
+  "prerequisites": [
+    "Babylon.js scene with camera, engine, and a render loop",
+    "@babylonjs/loaders/glTF registered",
+    "Ammo.js (optional, required for embedded collider)",
+    "Service worker served at web root"
+  ],
+  "entrypoint": "SKILL.md",
+  "read_order": [
+    "SKILL.md"
+  ],
+  "dependencies": []
+}

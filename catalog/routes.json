@@ -1,0 +1,65 @@
+{
+  "routes": [
+    {
+      "intent": [
+        "playcanvas polygon streaming",
+        "playcanvas xrg",
+        "@polygon-streaming/web-player-playcanvas",
+        "playcanvas streaming model",
+        "playcanvas stream controller",
+        "playcanvas vite",
+        "playcanvas bundler"
+      ],
+      "skills": ["playcanvas-polygon-streaming-npm-package"]
+    },
+    {
+      "intent": [
+        "playcanvas umd",
+        "polygon-streaming.umd.js",
+        "playcanvas editor",
+        "playcanvas script tag",
+        "downloadable version",
+        "standalone polygon streaming",
+        "no bundler playcanvas"
+      ],
+      "skills": ["playcanvas-polygon-streaming-standalone"]
+    },
+    {
+      "intent": [
+        "threejs polygon streaming",
+        "three.js xrg",
+        "@polygon-streaming/web-player-threejs",
+        "three.js streaming model",
+        "three.js stream controller"
+      ],
+      "skills": ["threejs-polygon-streaming"]
+    },
+    {
+      "intent": [
+        "babylonjs polygon streaming",
+        "babylon.js xrg",
+        "@polygon-streaming/web-player-babylonjs",
+        "babylon streaming model",
+        "babylon stream controller"
+      ],
+      "skills": ["babylonjs-polygon-streaming"]
+    },
+    {
+      "intent": [
+        "polygon streaming",
+        "xrg",
+        "streaming model",
+        "triangle budget",
+        "web polygon streaming",
+        "stream.viverse.com",
+        "web-polygon-streaming"
+      ],
+      "skills": [
+        "playcanvas-polygon-streaming-npm-package",
+        "playcanvas-polygon-streaming-standalone",
+        "threejs-polygon-streaming",
+        "babylonjs-polygon-streaming"
+      ]
+    }
+  ]
+}

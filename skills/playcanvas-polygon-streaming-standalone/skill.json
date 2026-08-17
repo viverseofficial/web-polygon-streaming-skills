@@ -1,0 +1,27 @@
+{
+  "id": "playcanvas-polygon-streaming-standalone",
+  "name": "playcanvas-polygon-streaming-standalone",
+  "version": "0.1.0",
+  "status": "active",
+  "description": "Integrating Viverse Polygon Streaming into PlayCanvas via the standalone UMD build (polygon-streaming.umd.js) — no bundler required. Used in the PlayCanvas Editor and plain <script> setups.",
+  "tags": [
+    "polygon-streaming",
+    "viverse",
+    "playcanvas",
+    "xrg",
+    "streaming",
+    "umd",
+    "standalone",
+    "downloadable",
+    "playcanvas-editor"
+  ],
+  "prerequisites": [
+    "PlayCanvas engine v1 or v2 (loaded via <script> or the PlayCanvas Editor)",
+    "Ability to upload polygon-streaming.umd.js as a script asset"
+  ],
+  "entrypoint": "SKILL.md",
+  "read_order": [
+    "SKILL.md"
+  ],
+  "dependencies": []
+}

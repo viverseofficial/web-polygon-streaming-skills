@@ -1,0 +1,26 @@
+{
+  "id": "playcanvas-polygon-streaming-npm-package",
+  "name": "playcanvas-polygon-streaming-npm-package",
+  "version": "0.1.0",
+  "status": "active",
+  "description": "Integrating Viverse Polygon Streaming (.xrg) into a PlayCanvas app via the @polygon-streaming/web-player-playcanvas NPM package (ES module).",
+  "tags": [
+    "polygon-streaming",
+    "viverse",
+    "playcanvas",
+    "xrg",
+    "streaming",
+    "npm",
+    "esm"
+  ],
+  "prerequisites": [
+    "PlayCanvas engine v1 or v2",
+    "A bundler that supports ES modules (Vite/Webpack/Rollup)",
+    "Service worker served at web root (see SKILL.md)"
+  ],
+  "entrypoint": "SKILL.md",
+  "read_order": [
+    "SKILL.md"
+  ],
+  "dependencies": []
+}

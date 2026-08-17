@@ -1,0 +1,25 @@
+{
+  "id": "threejs-polygon-streaming",
+  "name": "threejs-polygon-streaming",
+  "version": "0.1.0",
+  "status": "active",
+  "description": "Integrating Viverse Polygon Streaming (.xrg) into a Three.js scene via the @polygon-streaming/web-player-threejs NPM package.",
+  "tags": [
+    "polygon-streaming",
+    "viverse",
+    "threejs",
+    "xrg",
+    "streaming",
+    "vrm"
+  ],
+  "prerequisites": [
+    "Three.js scene with camera, renderer, and a per-frame update loop",
+    "KTX2 basis transcoder available at /lib/basis_transcoder.js and .wasm",
+    "Service worker served at web root"
+  ],
+  "entrypoint": "SKILL.md",
+  "read_order": [
+    "SKILL.md"
+  ],
+  "dependencies": []
+}

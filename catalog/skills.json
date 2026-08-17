@@ -1,0 +1,22 @@
+{
+  "version": "0.1.0",
+  "generated_at": "2026-08-17T05:47:13.743Z",
+  "skills": [
+    {
+      "id": "babylonjs-polygon-streaming",
+      "path": "skills/babylonjs-polygon-streaming/skill.json"
+    },
+    {
+      "id": "playcanvas-polygon-streaming-npm-package",
+      "path": "skills/playcanvas-polygon-streaming-npm-package/skill.json"
+    },
+    {
+      "id": "playcanvas-polygon-streaming-standalone",
+      "path": "skills/playcanvas-polygon-streaming-standalone/skill.json"
+    },
+    {
+      "id": "threejs-polygon-streaming",
+      "path": "skills/threejs-polygon-streaming/skill.json"
+    }
+  ]
+}
