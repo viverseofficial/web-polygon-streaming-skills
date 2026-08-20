@@ -5,7 +5,7 @@ Skills bundle for **standalone (non-VIVERSE-published)** Polygon Streaming Web P
 Polygon Streaming streams high-poly `.xrg` models to a web page and progressively refines geometry / textures based on a triangle budget and camera distance.
 
 > [!IMPORTANT]
-> **If your PlayCanvas project will be published to VIVERSE**, use the [`playcanvas-toolkit-skills`](../playcanvas-toolkit-skills/) bundle instead — specifically the [`viverse-polygon-streaming`](../playcanvas-toolkit-skills/skills/viverse-polygon-streaming/) skill. That path uses the VIVERSE PlayCanvas Toolkit Chrome extension and does not require any code.
+> **If your PlayCanvas project will be published to VIVERSE**, use the [`playcanvas-toolkit-skills`](https://github.com/EJHuang-HTC/playcanvas-toolkit-skills) bundle instead — specifically the [`viverse-polygon-streaming`](https://github.com/EJHuang-HTC/playcanvas-toolkit-skills/tree/main/skills/viverse-polygon-streaming) skill. That path uses the VIVERSE PlayCanvas Toolkit Chrome extension and does not require any code.
 >
 > This bundle covers the **other integration paths**: bundler-based NPM (JavaScript SDK), Standalone Plugin (Option 2), HTML Scripting (Option 3), Three.js, and Babylon.js.
 
