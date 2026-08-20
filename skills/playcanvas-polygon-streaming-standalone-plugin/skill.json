@@ -1,0 +1,28 @@
+{
+  "id": "playcanvas-polygon-streaming-standalone-plugin",
+  "name": "playcanvas-polygon-streaming-standalone-plugin",
+  "version": "0.2.0",
+  "status": "active",
+  "description": "Option 2 of the Polygon Streaming PlayCanvas SDK. Integrating Polygon Streaming into PlayCanvas via the Standalone Plugin (polygon-streaming.js script asset uploaded into the PlayCanvas Editor). For projects NOT publishing to VIVERSE and not using a bundler.",
+  "tags": [
+    "polygon-streaming",
+    "viverse",
+    "playcanvas",
+    "xrg",
+    "streaming",
+    "standalone-plugin",
+    "downloadable",
+    "playcanvas-editor",
+    "umd"
+  ],
+  "prerequisites": [
+    "PlayCanvas engine v1 or v2 (loaded via <script> or the PlayCanvas Editor)",
+    "Ability to upload polygon-streaming.js as a script asset in the PlayCanvas Editor",
+    "Basis Library imported in the PlayCanvas project (Settings → Rendering → IMPORT BASIS)"
+  ],
+  "entrypoint": "SKILL.md",
+  "read_order": [
+    "SKILL.md"
+  ],
+  "dependencies": []
+}

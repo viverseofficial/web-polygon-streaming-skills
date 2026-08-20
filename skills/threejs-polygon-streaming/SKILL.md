@@ -1,13 +1,13 @@
 ---
 name: threejs-polygon-streaming
-description: Integrating Viverse Polygon Streaming (.xrg) into a Three.js scene via the @polygon-streaming/web-player-threejs NPM package.
+description: Polygon Streaming JavaScript SDK — Three.js binding. Integrating Viverse Polygon Streaming (.xrg) into a Three.js scene via the @polygon-streaming/web-player-threejs NPM package.
 prerequisites: [Three.js scene with camera + renderer + animation loop, basis transcoder at /lib, service worker at web root]
-tags: [polygon-streaming, viverse, threejs, xrg, streaming, vrm]
+tags: [polygon-streaming, viverse, threejs, xrg, streaming, vrm, javascript-sdk]
 ---
 
-# Three.js Polygon Streaming
+# Polygon Streaming JavaScript SDK — Three.js
 
-Use this skill when integrating Viverse Polygon Streaming into a Three.js scene via `@polygon-streaming/web-player-threejs`. The binding is an ES-module package driven by a per-frame `streamController.update()` call.
+Use this skill when integrating Viverse Polygon Streaming into a Three.js scene via `@polygon-streaming/web-player-threejs`. This is the **Polygon Streaming JavaScript SDK → Three.js** path in the official docs. The binding is an ES-module package driven by a per-frame `streamController.update()` call.
 
 ## When To Use This Skill
 
@@ -230,7 +230,7 @@ Method: `streamController.addModel(url, modelParent, options)`
 
 ## References
 
+- Public docs — Polygon Streaming JavaScript SDK (Three.js): <https://docs.viverse.com/polygon-streaming/polygon-streaming-javascript-sdk/three.js>
 - Repo: `web-polygon-streaming/packages/threejs`
 - Example app: `web-polygon-streaming/packages/threejs/example`
-- Public docs: <https://docs.viverse.com/polygon-streaming/polygon-streaming-javascript-sdk>
 - Model console: <https://stream.viverse.com/console>

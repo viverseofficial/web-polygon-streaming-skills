@@ -1,0 +1,27 @@
+{
+  "id": "playcanvas-polygon-streaming-html-scripting",
+  "name": "playcanvas-polygon-streaming-html-scripting",
+  "version": "0.1.0",
+  "status": "active",
+  "description": "Option 3 of the Polygon Streaming PlayCanvas SDK. Integrating Polygon Streaming by manually adding PolygonStreaming.js from the Viverse CDN into a PlayCanvas-built HTML page. For projects NOT publishing to VIVERSE and not using the standalone plugin asset in the editor.",
+  "tags": [
+    "polygon-streaming",
+    "viverse",
+    "playcanvas",
+    "xrg",
+    "streaming",
+    "html-scripting",
+    "cdn",
+    "script-tag"
+  ],
+  "prerequisites": [
+    "PlayCanvas project built/downloaded to HTML",
+    "Ability to edit the downloaded HTML file",
+    "Polygon Streaming asset uploaded at stream.viverse.com/console"
+  ],
+  "entrypoint": "SKILL.md",
+  "read_order": [
+    "SKILL.md"
+  ],
+  "dependencies": []
+}

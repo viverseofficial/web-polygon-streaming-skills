@@ -1,11 +1,14 @@
 ---
 name: babylonjs-polygon-streaming
-description: Integrating Viverse Polygon Streaming (.xrg) into a Babylon.js scene via the @polygon-streaming/web-player-babylonjs NPM package.
+description: Integrating Viverse Polygon Streaming (.xrg) into a Babylon.js scene via the @polygon-streaming/web-player-babylonjs NPM package. NOT covered by the official Viverse public documentation — this skill is derived from the source repo (packages/babylonjs) and may lag or diverge from official releases.
 prerequisites: [Babylon.js scene with camera + engine + render loop, @babylonjs/loaders/glTF, optional Ammo.js for collider, service worker at web root]
-tags: [polygon-streaming, viverse, babylonjs, xrg, streaming, ammo]
+tags: [polygon-streaming, viverse, babylonjs, xrg, streaming, ammo, unofficial]
 ---
 
-# Babylon.js Polygon Streaming
+# Polygon Streaming — Babylon.js (Unofficial / Repo-only)
+
+> [!CAUTION]
+> **This binding is NOT documented in the official Viverse public docs.** As of the current *Polygon Streaming JavaScript SDK* documentation set, only **PlayCanvas** and **Three.js** are listed. Everything below is derived from the source repo (`web-polygon-streaming/packages/babylonjs`) and its example app. API surface, package name, and behavior may lag or diverge from official Viverse releases. Prefer the Three.js or PlayCanvas bindings when possible; use this only if a Babylon.js integration is required.
 
 Use this skill when integrating Viverse Polygon Streaming into a Babylon.js scene via `@polygon-streaming/web-player-babylonjs`. The binding is an ES-module package driven by a per-frame `streamController.update()` call inside `engine.runRenderLoop`.
 
@@ -181,7 +184,7 @@ Method: `streamController.addModel(url, modelParent, options)`
 
 ## References
 
-- Repo: `web-polygon-streaming/packages/babylonjs`
+- Repo: `web-polygon-streaming/packages/babylonjs` (source of truth — no official public docs page)
 - Example app: `web-polygon-streaming/packages/babylonjs/example`
-- Public docs: <https://docs.viverse.com/polygon-streaming/polygon-streaming-javascript-sdk>
+- Public docs (PlayCanvas + Three.js only, Babylon.js not listed): <https://docs.viverse.com/polygon-streaming/polygon-streaming-javascript-sdk>
 - Model console: <https://stream.viverse.com/console>

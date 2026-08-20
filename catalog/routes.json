@@ -2,27 +2,40 @@
   "routes": [
     {
       "intent": [
-        "playcanvas polygon streaming",
+        "playcanvas standalone plugin",
+        "polygon-streaming.js playcanvas",
+        "polygon-streaming.umd.js",
+        "playcanvas editor no bundler",
+        "downloadable version polygon streaming",
+        "standalone polygon streaming",
+        "import basis playcanvas",
+        "option 2 standalone plugin"
+      ],
+      "skills": ["playcanvas-polygon-streaming-standalone-plugin"]
+    },
+    {
+      "intent": [
+        "polygonstreaming.js cdn",
+        "html scripting polygon streaming",
+        "playcanvas downloaded html",
+        "playcanvas script tag polygon streaming",
+        "option 3 html scripting",
+        "stream-stage.viverse.com polygonstreaming"
+      ],
+      "skills": ["playcanvas-polygon-streaming-html-scripting"]
+    },
+    {
+      "intent": [
+        "playcanvas polygon streaming npm",
         "playcanvas xrg",
         "@polygon-streaming/web-player-playcanvas",
         "playcanvas streaming model",
         "playcanvas stream controller",
-        "playcanvas vite",
-        "playcanvas bundler"
+        "playcanvas vite polygon streaming",
+        "playcanvas bundler polygon streaming",
+        "javascript sdk playcanvas polygon streaming"
       ],
       "skills": ["playcanvas-polygon-streaming-npm-package"]
-    },
-    {
-      "intent": [
-        "playcanvas umd",
-        "polygon-streaming.umd.js",
-        "playcanvas editor",
-        "playcanvas script tag",
-        "downloadable version",
-        "standalone polygon streaming",
-        "no bundler playcanvas"
-      ],
-      "skills": ["playcanvas-polygon-streaming-standalone"]
     },
     {
       "intent": [
@@ -30,7 +43,8 @@
         "three.js xrg",
         "@polygon-streaming/web-player-threejs",
         "three.js streaming model",
-        "three.js stream controller"
+        "three.js stream controller",
+        "javascript sdk three.js"
       ],
       "skills": ["threejs-polygon-streaming"]
     },
@@ -52,11 +66,13 @@
         "triangle budget",
         "web polygon streaming",
         "stream.viverse.com",
-        "web-polygon-streaming"
+        "web-polygon-streaming",
+        "viverse polygon streaming sdk"
       ],
       "skills": [
+        "playcanvas-polygon-streaming-standalone-plugin",
+        "playcanvas-polygon-streaming-html-scripting",
         "playcanvas-polygon-streaming-npm-package",
-        "playcanvas-polygon-streaming-standalone",
         "threejs-polygon-streaming",
         "babylonjs-polygon-streaming"
       ]

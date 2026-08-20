@@ -1,15 +1,19 @@
 ---
 name: playcanvas-polygon-streaming-npm-package
-description: Integrating Viverse Polygon Streaming (.xrg) into a PlayCanvas app via the @polygon-streaming/web-player-playcanvas NPM package (ES module).
+description: Polygon Streaming JavaScript SDK — PlayCanvas binding. Integrating Viverse Polygon Streaming (.xrg) into a PlayCanvas app via the @polygon-streaming/web-player-playcanvas NPM package (ES module).
 prerequisites: [PlayCanvas 1 or 2, ES-module bundler (Vite/Webpack), service worker served at web root]
-tags: [polygon-streaming, viverse, playcanvas, xrg, streaming, npm, esm]
+tags: [polygon-streaming, viverse, playcanvas, xrg, streaming, npm, esm, javascript-sdk]
 ---
 
-# PlayCanvas Polygon Streaming — NPM Package (ES Module)
+# Polygon Streaming JavaScript SDK — PlayCanvas (NPM Package)
 
-Use this skill when integrating Polygon Streaming into a PlayCanvas application that has a bundler and imports `@polygon-streaming/web-player-playcanvas` as an ES module. This is the path used by Viverse Create (formerly Viverse World), the PlayCanvas editor extension, and any custom PlayCanvas app built with Vite/Webpack.
+Use this skill when integrating Polygon Streaming into a PlayCanvas application that has a bundler and imports `@polygon-streaming/web-player-playcanvas` as an ES module. This is the **Polygon Streaming JavaScript SDK → PlayCanvas** path in the official docs, used by Viverse Create (formerly Viverse World), the PlayCanvas editor extension, and any custom PlayCanvas app built with Vite/Webpack.
 
-If you instead want a single UMD `<script>` drop into the PlayCanvas Editor with no bundler, use [`playcanvas-polygon-streaming-standalone`](../playcanvas-polygon-streaming-standalone/SKILL.md).
+If you want a different integration path, see:
+
+- [`playcanvas-polygon-streaming-viverse-extension`](../playcanvas-polygon-streaming-viverse-extension/SKILL.md) — Option 1 of the PlayCanvas SDK (VIVERSE-published projects).
+- [`playcanvas-polygon-streaming-standalone-plugin`](../playcanvas-polygon-streaming-standalone-plugin/SKILL.md) — Option 2 (UMD `polygon-streaming.js` uploaded into the Editor, no bundler).
+- [`playcanvas-polygon-streaming-html-scripting`](../playcanvas-polygon-streaming-html-scripting/SKILL.md) — Option 3 (add `PolygonStreaming.js` from the CDN to a downloaded HTML build).
 
 ## When To Use This Skill
 
@@ -176,20 +180,24 @@ streamableModel.once('streamable-model:load-error', (error) => {
 | `maximumQuality` | `number` | `15000` | Stops refining beyond this quality. `0` = unlimited. |
 | `closeUpDistance` | `number` | `3` | Distance where close-up factor kicks in. `0` disables. |
 | `closeUpDistanceFactor` | `number` | `5` | Should be > `distanceFactor`. |
-| `iOSMemoryLimit` | `number` (MB) | `0` | `0` = auto, `-1` = no limit. |
+| `distanceType` | `string` | `'boundingBoxCenter'` | Reference point for camera-distance calculation. Surfaced primarily in HTML Scripting docs. |
+| `iOSMemoryLimit` | `number` (MB) | `0` | `0` = auto, `-1` = no limit. Aliased as `iosMemoryLimit` in the HTML Scripting docs. |
 | `showLoadingModel` | `boolean` | `true` | Animated loading placeholder. |
 | `loadingModelUrl` | `string` | `null` | Custom loading GLB. |
+
+> [!TIP]
+> **Rule of thumb**: set `triangleBudget` to at least **30% of the source model's polygon count**. For a 10M-poly source, use ≥ 3,000,000.
 
 ## Streamable Model Attributes (reference)
 
 | Attribute | Type | Default | Notes |
 | --- | --- | --- | --- |
 | `path` | `string` | `'/model.xrg'` | Path or URL of the `.xrg` (or a Viverse asset ID URL). |
-| `qualityPriority` | `number` | `1` | Relative quality vs. other streamed models in the scene. |
+| `qualityPriority` | `number` | `1` | Relative quality vs. other streamed models in the scene. See Priority Level presets below. |
+| `forceDoubleSided` | `boolean` | `false` | Aliased as `doubleSidedMaterials` in HTML Scripting docs. |
 | `initialTrianglePercent` | `number` | `0.1` | Portion of budget to allocate on first load. |
 | `castShadows` | `boolean` | `true` | |
 | `receiveShadows` | `boolean` | `true` | |
-| `forceDoubleSided` | `boolean` | `false` | |
 | `useAlpha` | `boolean` | `true` | Disable for opaque-only rendering (faster). |
 | `useEmbeddedCollider` | `boolean` | `true` | Uses the collider bundled in the `.xrg`. |
 | `playAnimationAutomatically` | `boolean` | `true` | |
@@ -199,6 +207,20 @@ streamableModel.once('streamable-model:load-error', (error) => {
 | `vrmAnimations` | `Array<{ name, asset, loop?, default? }>` | `[]` | See VRM section above. |
 | `environmentAsset` | `pc.Asset` (cubemap or texture) | `null` | Prefiltered IBL. |
 | `hashCode` | `string` | `''` | Optional integrity hash. |
+
+## Priority Level Presets
+
+The VIVERSE Extension / Editor inspector exposes a `Priority Level` dropdown that writes into `qualityPriority`. When configuring via code you set `qualityPriority` directly:
+
+| Priority Level | `qualityPriority` value |
+| --- | --- |
+| Default | `1` |
+| Higher | `1.5` |
+| Highest | `2` |
+| Custom | User-entered number |
+
+> [!CAUTION]
+> **Animations do not play inside the VIVERSE extension editor preview.** If your project uses the VIVERSE Extension, you must **Publish** the scene to VIVERSE to see the model animate. Static geometry preview works in the editor.
 
 ## Getting a Model URL
 
@@ -237,11 +259,15 @@ The player also honors many URL query parameters that map to controller attribut
 - **VRM animations must be declared at create time.** They are container assets, not URLs; wrap them with `new pc.Asset('', 'container', { url: ... })`.
 - **`animation` and `animationStateGraph` are mutually exclusive in practice.** If you supply a state graph, drive playback through it and set `playAnimationAutomatically: false` if you want manual control.
 - **`useEmbeddedCollider: true` requires the model was published with one.** If the `.xrg` has no collider, this is a no-op.
-- **UMD vs ESM.** If you find yourself needing `<script src="polygon-streaming.js">` (e.g. inside the PlayCanvas Editor), you want the standalone skill, not this one.
+- **UMD vs ESM.** If you find yourself needing `<script src="polygon-streaming.js">` (e.g. inside the PlayCanvas Editor), you want [`playcanvas-polygon-streaming-standalone-plugin`](../playcanvas-polygon-streaming-standalone-plugin/SKILL.md) (Option 2), not this one. If you're targeting VIVERSE publication with no bundler, use [`playcanvas-polygon-streaming-viverse-extension`](../playcanvas-polygon-streaming-viverse-extension/SKILL.md) (Option 1).
 
 ## References
 
+- Public docs — Polygon Streaming JavaScript SDK (PlayCanvas): <https://docs.viverse.com/polygon-streaming/polygon-streaming-javascript-sdk/playcanvas>
 - Repo: `web-polygon-streaming/packages/playcanvas`
 - Example app: `web-polygon-streaming/packages/playcanvas/example`
-- Public docs: <https://docs.viverse.com/polygon-streaming/polygon-streaming-javascript-sdk>
 - Model console: <https://stream.viverse.com/console>
+- Sister skills:
+  - [`playcanvas-polygon-streaming-viverse-extension`](../playcanvas-polygon-streaming-viverse-extension/SKILL.md) — Option 1
+  - [`playcanvas-polygon-streaming-standalone-plugin`](../playcanvas-polygon-streaming-standalone-plugin/SKILL.md) — Option 2
+  - [`playcanvas-polygon-streaming-html-scripting`](../playcanvas-polygon-streaming-html-scripting/SKILL.md) — Option 3
